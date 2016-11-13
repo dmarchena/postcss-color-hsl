@@ -9,7 +9,6 @@ function legacyAlpha(alpha) {
 function getColorData(colorFn) {
     const hslSyntaxPlusAltRegex = /(hsl)a?\s*\((\d*\.?\d+(?:deg|grad|rad|turn)?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s*(?:\/|,)\s*(\d*\.?\d+\%?))?\)/g; // eslint-disable-line max-len
     const match = hslSyntaxPlusAltRegex.exec(colorFn);
-    console.dir(match);
     if (match === null) return false;
     return {
         fn: match[1],
