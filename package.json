@@ -19,7 +19,8 @@
   "homepage": "https://github.com/dmarchena/postcss-color-hsl",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "!**/__tests__"
   ],
   "dependencies": {
     "postcss": "^5.2.0",
