@@ -1,3 +1,7 @@
+# 1.0.3 - 2016-11-14
+
+- Fix hue angle to number conversion
+
 # 1.0.2 - 2016-11-14
 
 - Fix dist files

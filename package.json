@@ -1,6 +1,6 @@
 {
   "name": "postcss-color-hsl",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "PostCSS plugin to transform W3C CSS Color Module Level 4 hsl() new syntax to more compatible CSS (comma-separated hsl() or hsla())",
   "keywords": [
     "postcss",
@@ -22,7 +22,8 @@
     "dist"
   ],
   "dependencies": {
-    "postcss": "^5.2.0"
+    "postcss": "^5.2.0",
+    "units-css": "^0.4.0"
   },
   "devDependencies": {
     "ava": "^0.16.0",

@@ -21,8 +21,7 @@ hsl() = hsl( <hue> <percentage> <percentage> [ / <alpha-value> ]? )
 ```
 hsl()  = hsl( <hue>, <percentage>, <percentage> )
 hsla() = hsla( <hue>, <percentage>, <percentage>, <alpha-value> )
-
-<hue> = <number> | <angle>
+<hue> = <number>
 <alpha-value> = <number>
 ```
 
@@ -32,7 +31,7 @@ hsla() = hsla( <hue>, <percentage>, <percentage>, <alpha-value> )
 .foo {
   /* Input example */
   color: hsl(0 100% 50%);
-  border-color: hsl(120deg 100% 75% / 70%);
+  border-color: hsl(200grad 100% 50% / 20%);
 }
 ```
 
@@ -40,7 +39,7 @@ hsla() = hsla( <hue>, <percentage>, <percentage>, <alpha-value> )
 .foo {
   /* Output example */
   color: hsl(0, 100%, 50%);
-  border-color: hsla(120deg, 100%, 75%, .7);
+  border-color: hsla(180, 100%, 50%, .2);
 }
 ```
 

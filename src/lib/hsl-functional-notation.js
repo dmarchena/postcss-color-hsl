@@ -1,3 +1,4 @@
+import units from 'units-css';
 
 function legacyAlpha(alpha) {
     if (alpha.indexOf('%') > -1) {
@@ -6,13 +7,20 @@ function legacyAlpha(alpha) {
     return alpha.replace(/^0\./, '.');
 }
 
+function legacyHue(hue) {
+    if (/.*(?:deg|grad|rad|turn)/.test(hue)) {
+        return Math.round(units.convert('deg', hue) * 1000) / 1000;
+    }
+    return hue;
+}
+
 function getColorData(colorFn) {
     const hslSyntaxPlusAltRegex = /(hsl)a?\s*\((\d*\.?\d+(?:deg|grad|rad|turn)?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s*(?:\/|,)\s*(\d*\.?\d+\%?))?\)/g; // eslint-disable-line max-len
     const match = hslSyntaxPlusAltRegex.exec(colorFn);
     if (match === null) return false;
     return {
         fn: match[1],
-        h: match[2],
+        h: legacyHue(match[2]),
         s: match[3],
         l: match[4],
         alpha: match[5] ? legacyAlpha(match[5]) : false

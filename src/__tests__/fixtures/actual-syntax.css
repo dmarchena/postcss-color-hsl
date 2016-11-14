@@ -1,4 +1,4 @@
 .foo { 
 	color: hsl(120, 40%, 40%);
-	background-color: hsla(90deg,100%,90%,.1);
+	background-color: hsla(90,100%,90%,.1);
 }
