@@ -1,6 +1,6 @@
 {
   "name": "postcss-color-hsl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PostCSS plugin to transform W3C CSS Color Module Level 4 hsl() new syntax to more compatible CSS (comma-separated hsl() or hsla())",
   "keywords": [
     "postcss",
@@ -46,7 +46,8 @@
     "test:ava": "ava",
     "test": "nyc npm run test:ava",
     "prebuild": "npm-run-all clean lint",
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "prepublish": "npm run build"
   },
   "babel": {
     "presets": [
