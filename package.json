@@ -1,6 +1,6 @@
 {
   "name": "postcss-color-hsl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "PostCSS plugin to transform W3C CSS Color Module Level 4 hsl() new syntax to more compatible CSS (comma-separated hsl() or hsla())",
   "keywords": [
     "postcss",
@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "postcss": "^5.2.0",
+    "postcss-value-parser": "^3.3.0",
     "units-css": "^0.4.0"
   },
   "devDependencies": {
@@ -37,7 +38,6 @@
     "eslint-config-postcss": "^2.0.2",
     "npm-run-all": "^3.1.0",
     "nyc": "^8.3.0",
-    "postcss-value-parser": "^3.3.0",
     "rimraf": "^2.5.4"
   },
   "scripts": {

@@ -1,3 +1,7 @@
+# 1.0.5 - 2016-11-16
+
+- Fix: Move postcss-value-parser from devDependencies to dependencies
+
 # 1.0.4 - 2016-11-16
 
 - Fix: Transform correctly when using spaces inside of parentheses
