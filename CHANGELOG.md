@@ -1,3 +1,11 @@
+# 1.0.4 - 2016-11-16
+
+- Fix: Transform correctly when using spaces inside of parentheses
+
+```
+( 120deg 100% 75% / 100% );
+```
+
 # 1.0.3 - 2016-11-14
 
 - Fix hue angle-to-number conversion

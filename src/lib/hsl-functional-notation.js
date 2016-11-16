@@ -15,7 +15,7 @@ function legacyHue(hue) {
 }
 
 function getColorData(colorFn) {
-    const hslSyntaxPlusAltRegex = /(hsl)a?\s*\((\d*\.?\d+(?:deg|grad|rad|turn)?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s*(?:\/|,)\s*(\d*\.?\d+\%?))?\)/g; // eslint-disable-line max-len
+    const hslSyntaxPlusAltRegex = /(hsl)a?\s*\(\s*(\d*\.?\d+(?:deg|grad|rad|turn)?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s*(?:\/|,)\s*(\d*\.?\d+\%?))?\s*\)/g; // eslint-disable-line max-len
     const match = hslSyntaxPlusAltRegex.exec(colorFn);
     if (match === null) return false;
     return {
