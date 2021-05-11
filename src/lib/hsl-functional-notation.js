@@ -1,7 +1,7 @@
-import units from 'units-css';
+const units = require('units-css');
 
 function legacyAlpha(alpha) {
-    if (alpha.indexOf('%') > -1) {
+    if (alpha.includes('%')) {
         alpha = `${alpha.slice(0, -1) / 100}`;
     }
     return alpha.replace(/^0\./, '.');
@@ -15,8 +15,9 @@ function legacyHue(hue) {
 }
 
 function getColorData(colorFn) {
-    const hslSyntaxPlusAltRegex = /(hsl)a?\s*\(\s*(\d*\.?\d+(?:deg|grad|rad|turn)?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s+|(?:\s*,\s*))(\d*\.?\d+\%)(?:\s*(?:\/|,)\s*(\d*\.?\d+\%?))?\s*\)/g; // eslint-disable-line max-len
-    const match = hslSyntaxPlusAltRegex.exec(colorFn);
+    let hslSyntaxPlusAltRegex = /(hsl)a?\s*\(\s*(\d*\.?\d+(?:deg|grad|rad|turn)?)(?:\s+|(?:\s*,\s*))(\d*\.?\d+%)(?:\s+|(?:\s*,\s*))(\d*\.?\d+%)(?:\s*[,/]\s*(\d*\.?\d+%?))?\s*\)/g; // eslint-disable-line max-len,security/detect-unsafe-regex
+
+    let match = hslSyntaxPlusAltRegex.exec(colorFn);
     if (match === null) return false;
     return {
         fn: match[1],
@@ -28,7 +29,7 @@ function getColorData(colorFn) {
 }
 
 function legacy(colorFn) {
-    const colorData = getColorData(colorFn);
+    let colorData = getColorData(colorFn);
 
     if (!colorData) return colorFn;
 
@@ -50,4 +51,4 @@ function legacy(colorFn) {
     return result;
 }
 
-export default { legacy };
+module.exports = { legacy };
